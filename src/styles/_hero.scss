@@ -100,6 +100,7 @@
                     width: 193px;
                     height: 48px;
                     font-family: variables.$emberFont;
+                    font-weight: 500;
                     color: #fff;
                     transition: all .3s ease;
 
@@ -144,19 +145,29 @@
 
         &__sinopse {
             margin-bottom: 16px;
+
+            p {
+                letter-spacing: .01em;
+                font-weight: 500;
+            }
         }
 
         &__infos {
-            max-height: 23px;
             display: flex;
             align-items: center;
+            max-height: 23px;
             gap: 16px;
             margin-bottom: 16px;
             color: variables.$infosTextColor;
 
+            span {
+                font-weight: 500;
+            }
+
             &--border {
                 span {
                     color: #fff;
+                    font-weight: 500;
                     background-color: variables.$bgBtnSeasonColor;
                     font-weight: bold;
                     border-radius: 3px;
@@ -192,12 +203,13 @@
 
             a {
                 color: #fff;
+                font-weight: 500;
             }
 
             span {
                 color: variables.$secondaryTextColor;
                 margin: 0 8px;
-                font-weight: bold;
+                font-weight: 900;
             }
         }
 
@@ -206,6 +218,11 @@
             align-items: center;
             gap: 8px;
             margin-bottom: 14px;
+
+            span {
+                font-weight: 500;
+                letter-spacing: .02em;
+            }
         }
 
         &__watch {
@@ -213,7 +230,8 @@
             gap: 36px;
 
             &__buttons {
-                display: flex;  
+                display: flex;
+                align-items: center;
 
                 &--watch {
                     background-color: transparent;
@@ -226,6 +244,14 @@
                         text-decoration: none;
                         display: block;
                         transition: all .2s ease-in-out;
+
+                        span {
+                            font-weight: 500;
+                        }
+
+                        #second-span {
+                            font-weight: 600;
+                        }
 
                         &:hover {
                             background-color: variables.$watchHoverBgColor;
@@ -248,15 +274,30 @@
                 &--list {
                     display: flex;
                     align-items: center;
-                    
-                    ul {
-                        display: flex;
-                        gap: 8px;
+                    gap: 12px;
 
-                        li {
-                            background-color: variables.$listBtnColor;
-                            padding: 10px;
-                            width: 100%;
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        background-color: variables.$listBtnColor;
+                        padding: 24px;
+                        height: 60px;
+                        width: 60px;
+                        border-radius: 50%;
+                        transition: all .2s ease-in-out;
+
+                        img {
+                            height: 30px;
+                        }
+
+                        &:hover {
+                            background-color: #fff;
+                            transform: scale(1.1);
+                            
+                            img {
+                                filter: brightness(0) saturate(100%)
+                            }
                         }
                     }
                 }
