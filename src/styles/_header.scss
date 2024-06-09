@@ -1,0 +1,11 @@
+@use 'variables';
+
+.header {
+    padding: 28px 0;
+    background-color: variables.$bgColor;
+    color: #fff;
+    
+    .container {
+        max-width: 960px;
+    }
+}

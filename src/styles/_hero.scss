@@ -1,0 +1,266 @@
+@use 'variables';
+
+.hero {
+    padding: 0 74px;
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+    
+    &__background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(to right, rgba(variables.$bgColor, 1) 10%, rgba(0, 0, 0, 0) 80%),
+                linear-gradient(to top, rgba(variables.$bgColor, 1) 5%, rgba(0, 0, 0, 0) 60%);
+        }
+    }
+
+    &__prime-logo {
+        position: absolute;
+        top: 24px;
+        right: 0;
+        width: auto;
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-right: 74px;
+        }
+    }
+
+    &__content {
+        max-width: 843px;
+        position: relative;
+        z-index: 1;
+        display: block;
+
+        &--emmys {
+            margin-top: 130px;
+            margin-bottom: 40px;
+            font-weight: bold;
+        }
+
+        &__title {
+            display: block;
+
+            &--original-image {
+                margin-bottom: 16px;
+
+                img {
+                    width: 260px;
+                    height: 13px;
+                }
+            }
+
+            &--h1-image {
+
+                img {
+                    height: 120px;
+                }
+            }
+        }
+
+        &__season {
+
+            &__selector {
+                margin-bottom: 16px;
+
+                .toggler {
+                    display: none;
+                }
+
+                &--button {
+                    display: inline-flex;
+                    align-items: center;
+                    position: relative;
+                    background-color: variables.$bgBtnSeasonColor;
+                    border: none;
+                    border-radius: 10px;
+                    padding: 12px 56px 12px 16px;
+                    width: 193px;
+                    height: 48px;
+                    font-family: variables.$emberFont;
+                    color: #fff;
+                    transition: all .3s ease;
+
+                    &::before {
+                        content: url('../../dist/images/drop_down_arrow.svg');
+                        background-size: contain;
+                        display: block;
+                        height: 6px;
+                        position: absolute;
+                        transform: translateY(-50%);
+                        right: 16px;
+                        top: 40%;
+                    }
+
+                    &:hover {
+                        background-color: #fff;
+                        color: #000;
+                    }
+                }
+
+                &--seasons-list {
+                    display: none;
+
+                    li {
+                        list-style: none;
+                        padding: 14px 48px 14px 20px;
+                        background-color: #191e25;
+                        width: 193px;
+
+                        &:first-child {
+                            background-color: variables.$bgBtnSeasonColor;
+                        }
+                        
+                        a {
+                            text-decoration: none;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+
+        &__sinopse {
+            margin-bottom: 16px;
+        }
+
+        &__infos {
+            max-height: 23px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 16px;
+            color: variables.$infosTextColor;
+
+            &--border {
+                span {
+                    color: #fff;
+                    background-color: variables.$bgBtnSeasonColor;
+                    font-weight: bold;
+                    border-radius: 3px;
+                    padding: 3px 7px;
+                }
+
+                #recommended-age {
+                    height: 22px;
+                    margin-bottom: -5px;
+                }
+
+                #subtitles-image {
+                    height: 22px;
+                    margin-bottom: -6px;
+                    padding: 3px;
+                    background-color: variables.$bgBtnSeasonColor;
+                    border-radius: 3px;
+                }
+
+                #audio-descriptions {
+                    color: #fff;
+                    height: 20px;
+                    margin-bottom: -5px;
+                    padding: 3px;
+                    background-color: variables.$bgBtnSeasonColor;
+                    border-radius: 3px;
+                }
+            }
+        }
+
+        &__genres {
+            margin-bottom: 16px;
+
+            a {
+                color: #fff;
+            }
+
+            span {
+                color: variables.$secondaryTextColor;
+                margin: 0 8px;
+                font-weight: bold;
+            }
+        }
+
+        &__watch-info {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        &__watch {
+            display: flex;
+            gap: 36px;
+
+            &__buttons {
+                display: flex;  
+
+                &--watch {
+                    background-color: transparent;
+                    margin-right: 36px;
+                    
+                    a {
+                        background-color: #fff;
+                        border-radius: 8px;
+                        padding: 8px 21px;
+                        text-decoration: none;
+                        display: block;
+                        transition: all .2s ease-in-out;
+
+                        &:hover {
+                            background-color: variables.$watchHoverBgColor;
+                            border-radius: 8px;
+                            transform: scale(1.05);
+                            filter: blur(0.5px);
+
+                            span {
+                                color: variables.$btnHoverTextColor;
+                            }
+                        }
+
+                        span {
+                            display: block;
+                            color: variables.$bgColor;
+                        }
+                    }
+                }
+
+                &--list {
+                    display: flex;
+                    align-items: center;
+                    
+                    ul {
+                        display: flex;
+                        gap: 8px;
+
+                        li {
+                            background-color: variables.$listBtnColor;
+                            padding: 10px;
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
