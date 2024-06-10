@@ -1,6 +1,7 @@
 @use 'variables';
 @use 'hero';
 @use 'header';
+@use 'episodes';
 
 @font-face {
     font-family: Amazon Ember;
@@ -49,9 +50,4 @@ body {
 
 .text--small {
     font-size: 15px;
-}
-
-.content {
-    padding: 50px;
-    background-color: red;
 }

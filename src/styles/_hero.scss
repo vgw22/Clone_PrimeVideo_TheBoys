@@ -31,7 +31,7 @@
             height: 100%;
             background: 
                 linear-gradient(to right, rgba(variables.$bgColor, 1) 10%, rgba(0, 0, 0, 0) 80%),
-                linear-gradient(to top, rgba(variables.$bgColor, 1) 5%, rgba(0, 0, 0, 0) 60%);
+                linear-gradient(to top, rgba(variables.$bgColor, 1) 1px, rgba(0, 0, 0, 0) 60%);
         }
     }
 
@@ -149,6 +149,7 @@
             p {
                 letter-spacing: .01em;
                 font-weight: 500;
+                line-height: 28px;
             }
         }
 
@@ -199,7 +200,7 @@
         }
 
         &__genres {
-            margin-bottom: 16px;
+            margin-bottom: 24px;
 
             a {
                 color: #fff;
@@ -232,6 +233,7 @@
             &__buttons {
                 display: flex;
                 align-items: center;
+                margin-bottom: 48px;
 
                 &--watch {
                     background-color: transparent;
