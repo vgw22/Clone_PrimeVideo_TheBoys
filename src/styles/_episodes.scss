@@ -3,30 +3,79 @@
 .content {
     padding: 0 72px;
 
-    &__tab-selector {
+    &__sort {
         max-width: 1600px;
-        padding: 0 50px;
+        padding-bottom: 12px;
         margin: 0 auto;
-        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
 
-        &__button {
-            background-color: transparent;
-            border: none;
-            padding: 12px 16px;
-            cursor: pointer;
-            font-family: variables.$emberFont;
-            color: variables.$secondaryTextColor;
-            letter-spacing: .02em;
-            font-weight: 500;
-            transition: all .2s ease-in-out;
+        .toggler {
+            display: none;
+        }
+    }
 
-            &:hover {
-                color: #fff;
-            }
+    &__episodes {
+        max-width: 1600px;
+        margin: 0 auto;
 
-            &--is-active {
-                color: #fff;
-                border-bottom: 3px solid #fff;
+        &__list {
+
+            &__item {
+                display: flex;
+                align-items: center;
+                border-radius: 8px;
+                column-gap: 24px;
+                padding: 24px;
+                margin-top: 24px;
+                width: 100%;
+                color: #aaa;
+                transition: all .2s ease-in-out;
+
+                &:hover {
+                    background-color: #191e25;
+                }
+                
+                .thumbnail {
+                    width: 360px;
+                    height: 202px;
+                    border-radius: 8px;
+                }
+
+                .episode__info {
+
+                    &--title {
+                        color: #fff;
+                        padding-bottom: 12px;
+                    }
+
+                    &--release-date {
+                        display: flex;
+                        align-items: center;
+                        padding-bottom: 12px;
+
+                        time {
+                            margin-right: 12px;
+                        }
+
+                        img {
+                            height: 22px;
+                            padding-left: 16px;
+                        }
+                    }
+
+                    &--sinopse {
+                        max-width: 72ch;
+                        font-weight: 500;
+                        letter-spacing: .01em;
+                        padding-bottom: 12px;
+                    }
+
+                    .hero__content__watch-info {
+                        color: #fff;
+                    }
+                }
             }
         }
     }
